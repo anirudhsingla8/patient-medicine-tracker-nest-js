@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request, Query } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { MedicinesService } from './medicines.service';
 import { CreateMedicineDto } from './dto/create-medicine.dto';
@@ -15,7 +15,10 @@ export class MedicinesController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Query('profileId') profileId?: string) {
+    if (profileId) {
+      return this.medicinesService.findAllByProfileId(profileId);
+    }
     return this.medicinesService.findAll();
   }
 
@@ -25,12 +28,22 @@ export class MedicinesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateMedicineDto: UpdateMedicineDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateMedicineDto: UpdateMedicineDto,
+    @Query('profileId') profileId?: string,
+  ) {
+    if (profileId) {
+      return this.medicinesService.updateByProfileId(id, profileId, updateMedicineDto);
+    }
     return this.medicinesService.update(id, updateMedicineDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: string, @Query('profileId') profileId?: string) {
+    if (profileId) {
+      return this.medicinesService.removeByProfileId(id, profileId);
+    }
     return this.medicinesService.remove(id);
   }
 }

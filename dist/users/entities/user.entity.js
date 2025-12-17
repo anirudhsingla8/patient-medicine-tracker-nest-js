@@ -17,6 +17,9 @@ let User = class User {
     email;
     password;
     passwordLastChanged;
+    googleId;
+    resetPasswordToken;
+    resetPasswordExpires;
     createdAt;
     fcmToken;
     isEnabled;
@@ -39,6 +42,18 @@ __decorate([
     (0, typeorm_1.Column)({ name: 'password_last_changed', nullable: true }),
     __metadata("design:type", Date)
 ], User.prototype, "passwordLastChanged", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ name: 'google_id', nullable: true, unique: true }),
+    __metadata("design:type", String)
+], User.prototype, "googleId", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ name: 'reset_password_token', nullable: true }),
+    __metadata("design:type", String)
+], User.prototype, "resetPasswordToken", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ name: 'reset_password_expires', nullable: true }),
+    __metadata("design:type", Date)
+], User.prototype, "resetPasswordExpires", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)({ name: 'created_at' }),
     __metadata("design:type", Date)

@@ -57,16 +57,29 @@ let UsersService = class UsersService {
         this.usersRepository = usersRepository;
     }
     async create(createUserDto) {
+        if (!createUserDto.email) {
+            throw new common_1.ConflictException('Email is required');
+        }
         const existingUser = await this.findByEmail(createUserDto.email);
         if (existingUser) {
+            if (createUserDto.googleId && !existingUser.googleId) {
+                existingUser.googleId = createUserDto.googleId;
+                return this.usersRepository.save(existingUser);
+            }
             throw new common_1.ConflictException('User with this email already exists');
         }
-        const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+        let hashedPassword = null;
+        if (createUserDto.password) {
+            hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+        }
         const user = this.usersRepository.create({
             ...createUserDto,
             password: hashedPassword,
         });
         return this.usersRepository.save(user);
+    }
+    async findByGoogleId(googleId) {
+        return this.usersRepository.findOneBy({ googleId });
     }
     findAll() {
         return `This action returns all users`;
@@ -77,8 +90,9 @@ let UsersService = class UsersService {
     async findByEmail(email) {
         return this.usersRepository.findOneBy({ email });
     }
-    update(id, updateUserDto) {
-        return `This action updates a #${id} user`;
+    async update(id, updateUserDto) {
+        await this.usersRepository.update(id, updateUserDto);
+        return this.findOne(id);
     }
     remove(id) {
         return `This action removes a #${id} user`;

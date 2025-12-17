@@ -13,17 +13,33 @@ export class UsersService {
     private usersRepository: Repository<User>,
   ) { }
 
-  async create(createUserDto: CreateUserDto): Promise<User> {
+  async create(createUserDto: Partial<CreateUserDto> & { googleId?: string }): Promise<User> {
+    if (!createUserDto.email) {
+      throw new ConflictException('Email is required');
+    }
     const existingUser = await this.findByEmail(createUserDto.email);
     if (existingUser) {
+      if (createUserDto.googleId && !existingUser.googleId) {
+        existingUser.googleId = createUserDto.googleId;
+        return this.usersRepository.save(existingUser);
+      }
       throw new ConflictException('User with this email already exists');
     }
-    const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+
+    let hashedPassword: string | null = null;
+    if (createUserDto.password) {
+      hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+    }
+
     const user = this.usersRepository.create({
       ...createUserDto,
-      password: hashedPassword,
+      password: hashedPassword as string, // TypeORM handles null for nullable columns
     });
     return this.usersRepository.save(user);
+  }
+
+  async findByGoogleId(googleId: string): Promise<User | null> {
+    return this.usersRepository.findOneBy({ googleId });
   }
 
   findAll() {
@@ -38,8 +54,9 @@ export class UsersService {
     return this.usersRepository.findOneBy({ email });
   }
 
-  update(id: string, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: string, updateUserDto: Partial<User>) {
+    await this.usersRepository.update(id, updateUserDto);
+    return this.findOne(id);
   }
 
   remove(id: string) {

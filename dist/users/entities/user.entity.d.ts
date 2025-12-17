@@ -4,6 +4,9 @@ export declare class User {
     email: string;
     password: string;
     passwordLastChanged: Date;
+    googleId: string;
+    resetPasswordToken: string;
+    resetPasswordExpires: Date;
     createdAt: Date;
     fcmToken: string;
     isEnabled: boolean;

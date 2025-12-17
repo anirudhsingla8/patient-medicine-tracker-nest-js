@@ -1,0 +1,97 @@
+
+> nest-medicine-tracker@0.0.1 start
+> nest start
+
+[32m[Nest] 95668  - [39m12/11/2025, 9:28:59 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:28:59 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +8ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:28:59 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:28:59 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:28:59 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:28:59 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:28:59 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCommonModule dependencies initialized[39m[38;5;3m +57ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +7147ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSchedulesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mGlobalMedicinesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMedicinesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mIntakesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mProfilesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUsersController {/api/users}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/users/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mProfilesController {/api/profiles}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/profiles, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/profiles, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/profiles/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/profiles/:id, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/profiles/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mMedicinesController {/api/medicines}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/medicines, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/medicines, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/medicines/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/medicines/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/medicines/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mSchedulesController {/api/schedules}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/schedules, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/schedules, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/schedules/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/schedules/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/schedules/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mGlobalMedicinesController {/api/global-medicines}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/global-medicines, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/global-medicines, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/global-medicines/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/global-medicines/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/global-medicines/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/api/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/forgot-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/reset-password, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mIntakesController {/api/intakes}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/intakes, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/intakes, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +65ms[39m
+[31m[Nest] 95668  - [39m12/11/2025, 9:29:07 PM [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3000[39m[38;5;3m +3ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (/Users/anirudh.singla/Documents/nest-medicine-tracker/node_modules/@nestjs/platform-express/adapters/express-adapter.js:127:32)
+    at /Users/anirudh.singla/Documents/nest-medicine-tracker/node_modules/@nestjs/core/nest-application.js:188:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/Users/anirudh.singla/Documents/nest-medicine-tracker/node_modules/@nestjs/core/nest-application.js:178:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async bootstrap (/Users/anirudh.singla/Documents/nest-medicine-tracker/src/main.ts:14:3) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v24.11.1
+andler] [39mError: Mail service is not available
+    at MailService.sendPasswordResetEmail [90m(/Users/anirudh.singla/Documents/nest-medicine-tracker/[39msrc/auth/mail.service.ts:59:19[90m)[39m
+    at AuthService.forgotPassword [90m(/Users/anirudh.singla/Documents/nest-medicine-tracker/[39msrc/auth/auth.service.ts:58:28[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)[39m

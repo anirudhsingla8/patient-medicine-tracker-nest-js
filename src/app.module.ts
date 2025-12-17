@@ -10,6 +10,7 @@ import { SchedulesModule } from './schedules/schedules.module';
 import { GlobalMedicinesModule } from './global-medicines/global-medicines.module';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
+import { IntakesModule } from './intakes/intakes.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { CommonModule } from './common/common.module';
     GlobalMedicinesModule,
     AuthModule,
     CommonModule,
+    IntakesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

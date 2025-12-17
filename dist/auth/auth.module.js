@@ -15,6 +15,8 @@ const auth_service_1 = require("./auth.service");
 const auth_controller_1 = require("./auth.controller");
 const users_module_1 = require("../users/users.module");
 const jwt_strategy_1 = require("./jwt.strategy");
+const google_strategy_1 = require("./google.strategy");
+const mail_service_1 = require("./mail.service");
 let AuthModule = class AuthModule {
 };
 exports.AuthModule = AuthModule;
@@ -27,13 +29,14 @@ exports.AuthModule = AuthModule = __decorate([
                 imports: [config_1.ConfigModule],
                 useFactory: async (configService) => ({
                     secret: configService.get('JWT_SECRET'),
-                    signOptions: { expiresIn: '1d' },
+                    signOptions: { expiresIn: '60m' },
                 }),
                 inject: [config_1.ConfigService],
             }),
         ],
         controllers: [auth_controller_1.AuthController],
-        providers: [auth_service_1.AuthService, jwt_strategy_1.JwtStrategy],
+        providers: [auth_service_1.AuthService, jwt_strategy_1.JwtStrategy, google_strategy_1.GoogleStrategy, mail_service_1.MailService],
+        exports: [auth_service_1.AuthService],
     })
 ], AuthModule);
 //# sourceMappingURL=auth.module.js.map

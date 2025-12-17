@@ -26,16 +26,25 @@ let MedicinesController = class MedicinesController {
     create(createMedicineDto, req) {
         return this.medicinesService.create(createMedicineDto, req.user.userId);
     }
-    findAll() {
+    findAll(profileId) {
+        if (profileId) {
+            return this.medicinesService.findAllByProfileId(profileId);
+        }
         return this.medicinesService.findAll();
     }
     findOne(id) {
         return this.medicinesService.findOne(id);
     }
-    update(id, updateMedicineDto) {
+    update(id, updateMedicineDto, profileId) {
+        if (profileId) {
+            return this.medicinesService.updateByProfileId(id, profileId, updateMedicineDto);
+        }
         return this.medicinesService.update(id, updateMedicineDto);
     }
-    remove(id) {
+    remove(id, profileId) {
+        if (profileId) {
+            return this.medicinesService.removeByProfileId(id, profileId);
+        }
         return this.medicinesService.remove(id);
     }
 };
@@ -50,8 +59,9 @@ __decorate([
 ], MedicinesController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)('profileId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], MedicinesController.prototype, "findAll", null);
 __decorate([
@@ -65,15 +75,17 @@ __decorate([
     (0, common_1.Patch)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
+    __param(2, (0, common_1.Query)('profileId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, update_medicine_dto_1.UpdateMedicineDto]),
+    __metadata("design:paramtypes", [String, update_medicine_dto_1.UpdateMedicineDto, String]),
     __metadata("design:returntype", void 0)
 ], MedicinesController.prototype, "update", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Query)('profileId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", void 0)
 ], MedicinesController.prototype, "remove", null);
 exports.MedicinesController = MedicinesController = __decorate([

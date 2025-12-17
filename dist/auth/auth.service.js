@@ -47,12 +47,15 @@ const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
 const bcrypt = __importStar(require("bcrypt"));
 const users_service_1 = require("../users/users.service");
+const mail_service_1 = require("./mail.service");
 let AuthService = class AuthService {
     usersService;
     jwtService;
-    constructor(usersService, jwtService) {
+    mailService;
+    constructor(usersService, jwtService, mailService) {
         this.usersService = usersService;
         this.jwtService = jwtService;
+        this.mailService = mailService;
     }
     async register(createUserDto) {
         const user = await this.usersService.create(createUserDto);
@@ -70,6 +73,44 @@ let AuthService = class AuthService {
             };
         }
         throw new common_1.UnauthorizedException('Invalid credentials');
+    }
+    async validateGoogleUser(details) {
+        const user = await this.usersService.create({
+            email: details.email,
+            googleId: details.googleId,
+        });
+        const payload = { email: user.email, sub: user.id };
+        return {
+            access_token: this.jwtService.sign(payload),
+        };
+    }
+    async forgotPassword(email) {
+        const user = await this.usersService.findByEmail(email);
+        if (!user) {
+            throw new common_1.UnauthorizedException('User not found');
+        }
+        const token = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        user.resetPasswordToken = token;
+        user.resetPasswordExpires = new Date(Date.now() + 3600000);
+        await this.usersService.update(user.id, {
+            resetPasswordToken: token,
+            resetPasswordExpires: user.resetPasswordExpires,
+        });
+        await this.mailService.sendPasswordResetEmail(email, token);
+        return { message: 'Password reset email sent' };
+    }
+    async resetPassword(resetPasswordDto) {
+        const user = await this.usersService.findByEmail(resetPasswordDto.email);
+        if (!user || user.resetPasswordToken !== resetPasswordDto.token || user.resetPasswordExpires < new Date()) {
+            throw new common_1.UnauthorizedException('Invalid or expired token');
+        }
+        const hashedPassword = await bcrypt.hash(resetPasswordDto.password, 10);
+        await this.usersService.update(user.id, {
+            password: hashedPassword,
+            resetPasswordToken: null,
+            resetPasswordExpires: null,
+        });
+        return { message: 'Password reset successful' };
     }
     create(createAuthDto) {
         return 'This action adds a new auth';
@@ -91,6 +132,7 @@ exports.AuthService = AuthService;
 exports.AuthService = AuthService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [users_service_1.UsersService,
-        jwt_1.JwtService])
+        jwt_1.JwtService,
+        mail_service_1.MailService])
 ], AuthService);
 //# sourceMappingURL=auth.service.js.map

@@ -15,6 +15,15 @@ export class User {
     @Column({ name: 'password_last_changed', nullable: true })
     passwordLastChanged: Date;
 
+    @Column({ name: 'google_id', nullable: true, unique: true })
+    googleId: string;
+
+    @Column({ name: 'reset_password_token', nullable: true })
+    resetPasswordToken: string;
+
+    @Column({ name: 'reset_password_expires', nullable: true })
+    resetPasswordExpires: Date;
+
     @CreateDateColumn({ name: 'created_at' })
     createdAt: Date;
 

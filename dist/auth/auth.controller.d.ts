@@ -10,4 +10,14 @@ export declare class AuthController {
     login(loginDto: LoginDto): Promise<{
         access_token: string;
     }>;
+    googleAuth(req: any): Promise<void>;
+    googleAuthRedirect(req: any): Promise<{
+        access_token: string;
+    }>;
+    forgotPassword(email: string): Promise<{
+        message: string;
+    }>;
+    resetPassword(resetPasswordDto: any): Promise<{
+        message: string;
+    }>;
 }

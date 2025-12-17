@@ -68,10 +68,10 @@ npm run start:prod
 
 ### Medicines (`/api/medicines`)
 -   `POST /api/medicines`: Add a new medicine.
--   `GET /api/medicines`: Get all medicines.
+-   `GET /api/medicines`: Get all medicines. Supports `?profileId=uuid` to filter by profile.
 -   `GET /api/medicines/:id`: Get a specific medicine by ID.
--   `PATCH /api/medicines/:id`: Update a medicine.
--   `DELETE /api/medicines/:id`: Delete a medicine.
+-   `PATCH /api/medicines/:id`: Update a medicine. Supports `?profileId=uuid` to ensure ownership.
+-   `DELETE /api/medicines/:id`: Delete a medicine. Supports `?profileId=uuid` to ensure ownership.
 
 ### Schedules (`/api/schedules`)
 -   `POST /api/schedules`: Create a new schedule.
@@ -86,6 +86,26 @@ npm run start:prod
 -   `GET /api/global-medicines/:id`: Get a specific global medicine by ID.
 -   `PATCH /api/global-medicines/:id`: Update a global medicine.
 -   `DELETE /api/global-medicines/:id`: Delete a global medicine.
+
+### Medicine Intakes (`/api/intakes`)
+-   `POST /api/intakes`: Record a medicine intake.
+    -   Body:
+        ```json
+        {
+          "medicineId": "uuid",
+          "profileId": "uuid",
+          "scheduleId": "uuid (optional)",
+          "status": "TAKEN | SKIPPED | MISSED",
+          "takenAt": "2023-10-27T10:00:00Z",
+          "notes": "Optional notes"
+        }
+        ```
+-   `GET /api/intakes`: Get intake history.
+    -   Query Params:
+        -   `profileId` (Required)
+        -   `medicineId` (Optional)
+        -   `startDate` (Optional)
+        -   `endDate` (Optional)
 
 ## License
 

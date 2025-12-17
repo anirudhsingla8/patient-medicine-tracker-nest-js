@@ -19,6 +19,7 @@ const schedules_module_1 = require("./schedules/schedules.module");
 const global_medicines_module_1 = require("./global-medicines/global-medicines.module");
 const auth_module_1 = require("./auth/auth.module");
 const common_module_1 = require("./common/common.module");
+const intakes_module_1 = require("./intakes/intakes.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -50,6 +51,7 @@ exports.AppModule = AppModule = __decorate([
             global_medicines_module_1.GlobalMedicinesModule,
             auth_module_1.AuthModule,
             common_module_1.CommonModule,
+            intakes_module_1.IntakesModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
